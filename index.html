@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+  .wave {
+    display: inline-block;
+    animation: wave-animation 2.5s infinite;
+    transform-origin: 70% 70%;
+    font-size: 50px;
+  }
+
+  @keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+    10% { transform: rotate(14.0deg) }
+    20% { transform: rotate(-8.0deg) }
+    30% { transform: rotate(14.0deg) }
+    40% { transform: rotate(-4.0deg) }
+    50% { transform: rotate(10.0deg) }
+    60% { transform: rotate( 0.0deg) }
+    100% { transform: rotate( 0.0deg) }
+  }
+</style>
+
+<div class="wave">👋</div>
     <title>My First Mini App</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
@@ -11,7 +32,7 @@
 <body>
     <h1>Привет, 🤓, <span id="username">Пользователь</span>!</h1>
     <button onclick="tg.close()">Закрыть приложение</button>
-    <button onclick="tg.close()">DEMID PIDRENKO</button>
+    <button onclick="tg.expand()">DEMID PIDRENKO</button>
 
     <script>
         let tg = window.Telegram.WebApp; // Инициализация

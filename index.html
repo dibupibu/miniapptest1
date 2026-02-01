@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
+    <title>My First Mini App</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body { text-align: center; font-family: sans-serif; background-color: var(--tg-theme-bg-color); color: var(--tg-theme-text-color); }
+        button { padding: 10px 20px; background: var(--tg-theme-button-color); color: var(--tg-theme-button-text-color); border: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Привет, 🤓, <span id="username">Пользователь</span>!</h1>
+    <button onclick="tg.close()">Закрыть приложение</button>
+    <button onclick="tg.expand()">DEMID PIDRENKO</button>
+
+    <script>
+        let tg = window.Telegram.WebApp; // Инициализация
+        tg.expand(); // Развернуть на весь экран
+        document.getElementById("username").innerText = tg.initDataUnsafe.user.first_name;
+    </script>
     <style>
   .wave {
     display: inline-block;
@@ -22,22 +40,5 @@
 </style>
 
 <div class="wave">👋</div>
-    <title>My First Mini App</title>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <style>
-        body { text-align: center; font-family: sans-serif; background-color: var(--tg-theme-bg-color); color: var(--tg-theme-text-color); }
-        button { padding: 10px 20px; background: var(--tg-theme-button-color); color: var(--tg-theme-button-text-color); border: none; border-radius: 5px; }
-    </style>
-</head>
-<body>
-    <h1>Привет, 🤓, <span id="username">Пользователь</span>!</h1>
-    <button onclick="tg.close()">Закрыть приложение</button>
-    <button onclick="tg.expand()">DEMID PIDRENKO</button>
-
-    <script>
-        let tg = window.Telegram.WebApp; // Инициализация
-        tg.expand(); // Развернуть на весь экран
-        document.getElementById("username").innerText = tg.initDataUnsafe.user.first_name;
-    </script>
 </body>
 </html>
